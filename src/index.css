@@ -1,111 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Radio+Canada+Big:regular,500,600,700,italic,500italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Serif+4:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Geist+Mono:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import "tailwindcss";
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --ls-heading: -0.02em; /* mobile default */
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 800px) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+    --ls-heading: -0.03em; /* tablet */
   }
 }
 
-body {
-  margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+@media (min-width: 1280px) {
+  :root {
+    --ls-heading: -0.05em; /* desktop */
   }
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
+
+@theme {
+  --color-pg-2: #6c6c6c;
+  --color-divider: #dbe0ec;
+  --color-bg-2: #f6f8fb;
+  --color-link: #2683eb;
+  --color-bg-4: #fff546;
+  --color-pg-3: #66640f;
+
+  --font-serif: "Source Serif 4", serif;
+  --font-sans: "Radio Canada Big", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  --text-heading-base: clamp(2.25rem, 0.286rem + 5.238vw, 5rem);
+  --text-heading-base--letter-spacing: -4%;
+  --text-heading-base--line-height: 1;
+  --text-heading-base--font-family: var(--font-serif);
+  --text-heading-base--font-weight: 400;
+
+  --text-heading-sub: clamp(2.25rem, 0.286rem + 5.238vw, 5rem);
+  --text-heading-sub--letter-spacing: var(--ls-heading);
+  --text-heading-sub--line-height: 1;
+  --text-heading-sub--font-family: var(--font-sans);
+  --text-heading-sub--font-weight: 400;
+
+  --text-heading-sm: clamp(1.5rem, 0.786rem + 1.905vw, 2.5rem);
+  --text-heading-sm--letter-spacing: -3%;
+  --text-heading-sm--line-height: 1;
+  --text-heading-sm--font-family: var(--font-sans);
+  --text-heading-sm--font-weight: 600;
+
+  --text-paragraph-1: clamp(1.115rem, 1.036rem + 0.138vw, 1.15rem);
+  --text-paragraph-1--letter-spacing: -2%;
+  --text-paragraph-1--line-height: 1.1;
+  --text-paragraph-1--font-family: var(--font-serif);
+  --text-paragraph-1--font-weight: 600;
+
+  --text-paragraph-2: clamp(1.125rem, 1.036rem + 0.238vw, 1.25rem);
+  --text-paragraph-2--letter-spacing: var(--ls-heading);
+  --text-paragraph-2--line-height: 1.2;
+  --text-paragraph-2--font-family: var(--font-serif);
+  --text-paragraph-2--font-weight: 400;
+}
+
+@layer base {
+}
+
+@layer components {
+  .wrapper {
+    @apply max-w-full px-4;
   }
 }
-p {
-  margin: 0;
-}
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+@layer utilities {
 }
