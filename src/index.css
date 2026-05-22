@@ -31,13 +31,13 @@
   --font-sans: "Radio Canada Big", sans-serif;
   --font-mono: "Geist Mono", monospace;
 
-  --text-heading-base: clamp(2.25rem, 0.286rem + 5.238vw, 5rem);
+  --text-heading-base: clamp(2.063rem, 1.028rem + 4.413vw, 5rem);
   --text-heading-base--letter-spacing: -4%;
   --text-heading-base--line-height: 1;
   --text-heading-base--font-family: var(--font-serif);
   --text-heading-base--font-weight: 400;
 
-  --text-heading-sub: clamp(2.25rem, 0.286rem + 5.238vw, 5rem);
+  --text-heading-sub: clamp(2.063rem, 1.028rem + 4.413vw, 5rem);
   --text-heading-sub--letter-spacing: var(--ls-heading);
   --text-heading-sub--line-height: 1;
   --text-heading-sub--font-family: var(--font-sans);
@@ -63,13 +63,35 @@
 }
 
 @layer base {
+  body {
+    font-family: var(--font-sans);
+  }
 }
 
 @layer components {
   .wrapper {
     @apply max-w-full px-4;
   }
+
+  .btn {
+    @apply bg-black text-white text-center font-mono w-fit py-[0.3em] px-[0.8em];
+  }
 }
 
 @layer utilities {
+  .hero-gradient {
+    position: relative;
+    /* Remove the background from here */
+  }
+
+  .hero-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: clamp(31.25rem, 17.5rem + 36.667vw, 50.5rem);
+    background: linear-gradient(to bottom, #a8d3ff, #fff4df);
+    z-index: 0;
+  }
 }

@@ -47,14 +47,14 @@ const Navbar = () => {
       </nav>
 
       <div
-        className={`wrapper md:hidden w-full overflow-hidden transition-all duration-500 ease-in-out px-[20px] shadow-2xl ${
+        className={`wrapper md:hidden w-full overflow-hidden transition-all duration-500 ease-in-out px-5 shadow-2xl ${
           nav ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <ul className="gap-3 flex flex-col py-4">
           <li>
             <a
-              className="text-[24px] leading[1] tracking-[-3] font-medium border-b-1 border-divider pb-3 block"
+              className="text-[24px] leading[1] tracking-[-3] font-medium border-b border-divider pb-3 block"
               href=""
             >
               Product
@@ -62,7 +62,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              className="text-[24px] leading[1] tracking-[-3] font-medium border-b-1 border-divider pb-3 block"
+              className="text-[24px] leading[1] tracking-[-3] font-medium border-b border-divider pb-3 block"
               href="#"
             >
               Journal
@@ -70,7 +70,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              className="text-[24px] leading[1] tracking-[-3] font-medium border-b-1 border-divider pb-3 block"
+              className="text-[24px] leading[1] tracking-[-3] font-medium border-b border-divider pb-3 block"
               href=""
             >
               About
@@ -78,7 +78,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              className="text-[24px] leading[1] font-medium border-b-1 border-divider pb-3 block"
+              className="text-[24px] leading[1] font-medium border-b border-divider pb-3 block"
               href="#"
             >
               Careers
