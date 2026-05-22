@@ -25,6 +25,7 @@
   --color-bg-2: #f6f8fb;
   --color-link: #2683eb;
   --color-bg-4: #fff546;
+  --color-pg-2: #6c6c6c;
   --color-pg-3: #66640f;
 
   --font-serif: "Source Serif 4", serif;
@@ -63,8 +64,50 @@
 }
 
 @layer base {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
   body {
-    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #8888881c;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  img {
+    width: 100%;
   }
 }
 
@@ -74,7 +117,7 @@
   }
 
   .btn {
-    @apply bg-black text-white text-center font-mono w-fit py-[0.3em] px-[0.8em];
+    @apply bg-black text-white text-center font-mono w-fit py-[0.5em] px-[0.8em];
   }
 }
 
